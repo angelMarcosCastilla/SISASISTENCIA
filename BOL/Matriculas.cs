@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BOL
 {
-    public class Class1
+    public class Matriculas
     {
     }
 }
