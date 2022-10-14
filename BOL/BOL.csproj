@@ -41,8 +41,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Matriculas.cs" />
-    <Compile Include="Grupos.cs" />
+    <Compile Include="Matricula.cs" />
+    <Compile Include="Grupo.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>

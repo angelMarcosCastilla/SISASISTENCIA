@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BOL
 {
-    internal class Grupos
+    internal class Grupo
     {
     }
 }
