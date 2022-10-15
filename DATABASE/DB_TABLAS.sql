@@ -31,11 +31,13 @@ CREATE TABLE PERSONAS(
 		direccion			VARCHAR(100) NOT NULL,
 		email				VARCHAR(100) NOT NULL,
 		celular				CHAR(9) NOT NULL,
+		sexo				CHAR(1) NOT NULL,
 		estado				BIT NOT NULL DEFAULT 1,
 
 		CONSTRAINT	uk_dni_per	UNIQUE (dni),
 		CONSTRAINT	uk_email_per	UNIQUE (email),
-		CONSTRAINT ck_celular_per	CHECK (celular LIKE('[9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]'))
+		CONSTRAINT ck_celular_per	CHECK (celular LIKE('[9][0-9][0-9][0-9][0-9][0-9][0-9][0-9][0-9]')),
+		CONSTRAINT ck_sexo_per	CHECK (sexo IN ('M', 'F'))
 )
 
 CREATE TABLE USUARIOS(

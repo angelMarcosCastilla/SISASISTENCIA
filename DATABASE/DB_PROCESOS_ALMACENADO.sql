@@ -49,6 +49,14 @@ AS BEGIN
 END 
 GO
 
+CREATE PROCEDURE SPU_USUARIO_BUSCAR
+@idusuario		INT
+AS BEGIN
+	SELECT * FROM USUARIOS
+	WHERE idpersona=@idusuario
+END 
+GO
+
 -- tabla personas
 CREATE PROCEDURE SPU_PERSONAS_LISTAR_ACTIVO
 AS BEGIN
@@ -69,9 +77,11 @@ CREATE PROCEDURE SPU_PERSONAS_REGISTRAR
 @fechanacimineto	DATETIME,
 @direccion			VARCHAR(100),
 @email				VARCHAR(100),
-@celular			CHAR(9)
+@celular			CHAR(9),
+@sexo				CHAR(1)
 AS BEGIN
-	INSERT INTO PERSONAS(apellidos, nombres, dni, fehanacimineto, direccion, email, celular) VALUES (@apellidos, @nombres, @dni, @fechanacimineto,@direccion,@email, @celular)
+	INSERT INTO PERSONAS(apellidos, nombres, dni, fehanacimineto, direccion, email, celular, sexo)
+	VALUES (@apellidos, @nombres, @dni, @fechanacimineto,@direccion,@email, @celular, @sexo)
 END
 GO
 
@@ -83,7 +93,8 @@ CREATE PROCEDURE SPU_PERSONA_EDITAR
 	@direccion			VARCHAR(100),
 	@email				VARCHAR(100),
 	@celular			CHAR(9),
-	@idpersona			INT
+	@idpersona			INT,
+	@sexo				CHAR(1)
 AS BEGIN
 	UPDATE PERSONAS SET
 	apellidos = @apellidos,
@@ -92,7 +103,8 @@ AS BEGIN
 	fehanacimineto = @fechanacimineto,
 	direccion= @direccion,
 	email = @email,
-	celular = @celular
+	celular = @celular,
+	sexo=@sexo
 	WHERE idpersona = @idpersona
 END 
 GO
@@ -111,3 +123,10 @@ AS BEGIN
 END 
 GO
 
+CREATE PROCEDURE SPU_PERSONA_BUSCAR
+@idpersona			INT
+AS BEGIN
+	SELECT * FROM PERSONAS
+	WHERE idpersona=@idpersona
+END 
+GO
