@@ -31,6 +31,7 @@ CREATE TABLE PERSONAS(
 		direccion			VARCHAR(100) NOT NULL,
 		email				VARCHAR(100) NOT NULL,
 		celular				CHAR(9) NOT NULL,
+		estado				BIT NOT NULL DEFAULT 1,
 
 		CONSTRAINT	uk_dni_per	UNIQUE (dni),
 		CONSTRAINT	uk_email_per	UNIQUE (email),
@@ -42,10 +43,11 @@ CREATE TABLE USUARIOS(
 		idpersona			INT NOT NULL,
 		nombreusuario		VARCHAR(50) NOT NULL,
 		claveacceso			VARCHAR(50) NOT NULL,
-		fecharegistro		DATE NOT NULL,
+		fecharegistro		DATE NOT NULL	DEFAULT GETDATE(),
 		estado				BIT NOT NULL DEFAULT 1,
 
-		CONSTRAINT fk_idpersona	FOREIGN KEY (idpersona)	REFERENCES PERSONAS(idpersona)
+		CONSTRAINT uk_idpersona_usu UNIQUE (idpersona),
+		CONSTRAINT fk_idpersona_usu	FOREIGN KEY (idpersona)	REFERENCES PERSONAS(idpersona)
 )
 
 CREATE TABLE MATRICULAS
