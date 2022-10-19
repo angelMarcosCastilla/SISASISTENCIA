@@ -33,22 +33,51 @@ namespace BOL
             acceso.cerrarConexion();
         }
 
-        public void editarGrupos(string grado)
+        public void editarGrupos(string grado, string seccion, string turno)
         {
-            SqlCommand comando = new SqlCommand("SPU_PERSONA_EDITAR", acceso.getConexion());
+            SqlCommand comando = new SqlCommand("SPU_EDITAR_GRUPOS", acceso.getConexion());
             comando.CommandType = CommandType.StoredProcedure;
             acceso.abrirConexion();
-            comando.Parameters.AddWithValue("@nombres", nombres);
-            comando.Parameters.AddWithValue("@apellidos", apellidos);
-            comando.Parameters.AddWithValue("@dni", dni);
-            comando.Parameters.AddWithValue("@fechanacimineto", fechanacimineto);
-            comando.Parameters.AddWithValue("@email", email);
-            comando.Parameters.AddWithValue("@celular", celular);
-            comando.Parameters.AddWithValue("@direccion", direccion);
-            comando.Parameters.AddWithValue("@sexo", sexo);
-            comando.Parameters.AddWithValue("@idpersona", idpersona);
+            comando.Parameters.AddWithValue("@grado", grado);
+            comando.Parameters.AddWithValue("@seccion", seccion);
+            comando.Parameters.AddWithValue("@turno", turno);
             comando.ExecuteNonQuery();
             acceso.cerrarConexion();
         }
+
+        public void eliminarGrupo(int idgrupo)
+        {
+            SqlCommand comando = new SqlCommand("SPU_ELIMINAR_GRUPOS", acceso.getConexion());
+            comando.CommandType = CommandType.StoredProcedure;
+            acceso.abrirConexion();
+            comando.Parameters.AddWithValue("@idgrupo", idgrupo);
+            comando.ExecuteNonQuery();
+            acceso.cerrarConexion();
+        }
+
+        public void activarGrupo(int idgrupo)
+        {
+            SqlCommand comando = new SqlCommand("SPU_ACTIVAR_GRUPOS", acceso.getConexion());
+            comando.CommandType = CommandType.StoredProcedure;
+            acceso.abrirConexion();
+            comando.Parameters.AddWithValue("@idgrupo", idgrupo);
+            comando.ExecuteNonQuery();
+            acceso.cerrarConexion();
+        }
+
+        public DataTable buscarGrupo(int idgrupo)
+        {
+            DataTable data = new DataTable();
+            SqlCommand comando = new SqlCommand("SPU_BUSCAR_GRUPOS", acceso.getConexion());
+            comando.CommandType = CommandType.StoredProcedure;
+            acceso.abrirConexion();
+            comando.Parameters.AddWithValue("@idgrupo", idgrupo);
+            data.Load(comando.ExecuteReader());
+            acceso.cerrarConexion();
+
+            return data;
+        }
+
+
     }
 }
