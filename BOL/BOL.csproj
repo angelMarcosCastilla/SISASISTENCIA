@@ -41,6 +41,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Asistencia.cs" />
     <Compile Include="Matricula.cs" />
     <Compile Include="Grupo.cs" />
     <Compile Include="MotivosSalidas.cs" />
