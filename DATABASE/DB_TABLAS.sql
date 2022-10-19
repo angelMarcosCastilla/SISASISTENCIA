@@ -1,3 +1,4 @@
+
 CREATE DATABASE SIS_IESUP
 GO
 USE SIS_IESUP
@@ -8,7 +9,8 @@ CREATE TABLE GRUPOS
 	idgrupo					INT IDENTITY(1,1) PRIMARY KEY,
 	grado					INT				NOT NULL,
 	seccion					CHAR(1)			NOT NULL,
-	turno					CHAR(1)			NOT NULL  -- T(tarde) M(mañana)
+	turno					CHAR(1)			NOT NULL,  -- T(tarde) M(mañana)
+	estado					BIT NOT NULL DEFAULT 1,
 
 	CONSTRAINT ck_turno_gru CHECK(turno IN ('T', 'M'))
 )
