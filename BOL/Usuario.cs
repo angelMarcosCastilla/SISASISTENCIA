@@ -83,10 +83,22 @@ namespace BOL
             SqlCommand comando = new SqlCommand("SPU_USUARIO_BUSCAR", acceso.getConexion());
             comando.CommandType = CommandType.StoredProcedure;
             acceso.abrirConexion();
-            comando.Parameters.AddWithValue("idusuario", idusuario);
+            comando.Parameters.AddWithValue("@idusuario", idusuario);
             data.Load(comando.ExecuteReader());
             acceso.cerrarConexion();
             return data;
         }
-    }
+      public DataTable buscarUsuarios(string nombreusuario)
+      {
+         DataTable data = new DataTable();
+         SqlCommand comando = new SqlCommand("SPU_USUARIO_LOGIN", acceso.getConexion());
+         comando.CommandType = CommandType.StoredProcedure;
+         acceso.abrirConexion();
+         comando.Parameters.AddWithValue("@nombreusuario", nombreusuario);
+         data.Load(comando.ExecuteReader());
+         acceso.cerrarConexion();
+         return data;
+      }
+
+   }
 }

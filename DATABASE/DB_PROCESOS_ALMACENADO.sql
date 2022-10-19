@@ -288,14 +288,51 @@ GO
 
 -- TABLA ASISTENCIAS
 
+
 CREATE PROCEDURE SPU_ASISTENCIA_LISTAR
 AS BEGIN
 	SELECT * FROM ASISTENCIAS
 END 
 GO
 
-CREATE PROCEDURE SPU_ASISTENCIA_REGISTRAR
+CREATE PROCEDURE SPU_ASISTENCIA_REGISTRAR_ENTRADA
+	@idmatricula		INT
 AS BEGIN
-	
+	INSERT INTO ASISTENCIAS(idmatricula) VALUES(@idmatricula)		
+END
+GO
+
+CREATE PROCEDURE SPU_ASISTENCIA_REGISTRAR_SALIDA
+	@fechahorasalida		DATETIME,
+	@idusuarioautoriza		INT,
+	@fechahorapermiso		DATETIME,
+	@idmotivo				INT,
+	@descripcion			TEXT,
+	@idmatricula			INT
+AS BEGIN
+	UPDATE ASISTENCIAS SET
+	fechahorasalida = @fechahorasalida,
+	idusuarioautoriza = @idusuarioautoriza,
+	fechahorapermiso = @fechahorapermiso,
+	descripcion = @descripcion,
+	idmotivo = @idmotivo
+	WHERE idmatricula = @idmatricula
+END
+GO
+
+
+-- sesion 
+CREATE PROCEDURE SPU_USUARIO_LOGIN
+@nombreusuario     VARCHAR(50)
+AS BEGIN
+	SELECT 
+	USUARIOS.idusuario,
+	USUARIOS.nombreusuario,
+	USUARIOS.claveacceso,
+	PERSONAS.nombres,
+	PERSONAS.apellidos
+	FROM USUARIOS
+	INNER JOIN PERSONAS ON USUARIOS.idpersona = PERSONAS.idpersona
+	WHERE USUARIOS.nombreusuario = @nombreusuario AND USUARIOS.estado = 1
 END
 GO
