@@ -85,5 +85,14 @@
       <Name>BOL</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\SENATI LOGO.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\acceso.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\acceso mas grande xd.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

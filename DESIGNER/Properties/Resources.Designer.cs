@@ -73,6 +73,16 @@ namespace DESIGNER.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap acceso_mas_grande_xd {
+            get {
+                object obj = ResourceManager.GetObject("acceso mas grande xd", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap SENATI_LOGO {
             get {
                 object obj = ResourceManager.GetObject("SENATI LOGO", resourceCulture);
