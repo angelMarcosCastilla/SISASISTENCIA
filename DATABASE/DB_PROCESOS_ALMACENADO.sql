@@ -336,3 +336,4 @@ AS BEGIN
 	WHERE USUARIOS.nombreusuario = @nombreusuario AND USUARIOS.estado = 1
 END
 GO
+

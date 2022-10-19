@@ -88,7 +88,7 @@ namespace BOL
             acceso.cerrarConexion();
             return data;
         }
-      public DataTable buscarUsuarios(string nombreusuario)
+      public DataTable login(string nombreusuario)
       {
          DataTable data = new DataTable();
          SqlCommand comando = new SqlCommand("SPU_USUARIO_LOGIN", acceso.getConexion());
