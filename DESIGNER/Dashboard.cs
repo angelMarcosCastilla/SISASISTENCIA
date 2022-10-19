@@ -16,5 +16,10 @@ namespace DESIGNER
       {
          InitializeComponent();
       }
-   }
+
+        private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
+        }
+    }
 }
