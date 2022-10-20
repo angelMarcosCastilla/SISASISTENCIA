@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace DESIGNER.Mantenimiento
+namespace DESIGNER.Mantenimientos
 {
-    public partial class formPersonas : Form
+    public partial class FrmPersonas : Form
     {
-        public formPersonas()
+        public FrmPersonas()
         {
             InitializeComponent();
         }

@@ -7,7 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-
+using DESIGNER.Mantenimientos;
 namespace DESIGNER
 {
    public partial class Dashboard : Form
@@ -42,6 +42,26 @@ namespace DESIGNER
             panelForm.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
+
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FrmPersonas());
+        }
+
+        private void btnUsuario_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new FrmUsuarios());
+        }
+
+        private void panelForm_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnAsistencias_Click(object sender, EventArgs e)
+        {
 
         }
     }
