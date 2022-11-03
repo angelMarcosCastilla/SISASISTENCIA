@@ -8,6 +8,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using BOL;
+using CryptSharp;
+
 namespace DESIGNER
 {
     public partial class Login : Form
@@ -34,8 +36,9 @@ namespace DESIGNER
                 if (resultado.Rows.Count > 0)
                 {
                     // falta encriptar
-                    string clave = resultado.Rows[0][2].ToString();
-                    if (clave == claveAcceso)
+                    string claveEncriptada = resultado.Rows[0][2].ToString();
+                    bool login = Crypter.CheckPassword(claveAcceso, claveEncriptada);
+                    if (login)
                     {
                         Dashboard dashboard = new Dashboard();
                         dashboard.Show();
