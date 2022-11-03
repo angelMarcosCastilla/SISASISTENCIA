@@ -46,7 +46,7 @@ CREATE TABLE USUARIOS(
 		idusuario			INT IDENTITY(1,1) PRIMARY KEY,
 		idpersona			INT NOT NULL,
 		nombreusuario		VARCHAR(50) NOT NULL,
-		claveacceso			VARCHAR(50) NOT NULL,
+		claveacceso			VARCHAR(90) NOT NULL,
 		fecharegistro		DATE NOT NULL	DEFAULT GETDATE(),
 		estado				BIT NOT NULL DEFAULT 1,
 

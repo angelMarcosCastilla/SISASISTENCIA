@@ -17,7 +17,7 @@ GO
 CREATE PROCEDURE SPU_USUARIO_REGISTRAR
 @idpersona			INT,
 @nombreusuario		VARCHAR(50),
-@claveaccesso		VARCHAR(50)
+@claveaccesso		VARCHAR(90)
 AS BEGIN
 	INSERT INTO USUARIOS(idpersona, nombreusuario, claveacceso) VALUES (@idpersona, @nombreusuario, @claveaccesso)
 END
@@ -25,7 +25,7 @@ GO
 
 CREATE PROCEDURE SPU_USUARIO_EDITAR
 	@nombreusuario		VARCHAR(50),
-	@claveaccesso		VARCHAR(50),
+	@claveaccesso		VARCHAR(90),
 	@idusuario			INT
 AS BEGIN
 	UPDATE USUARIOS SET
