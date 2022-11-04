@@ -49,6 +49,9 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnEditar = new System.Windows.Forms.Button();
             this.gridPersona = new System.Windows.Forms.DataGridView();
+            this.txtBuscarPerssona = new System.Windows.Forms.TextBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.ckbuscar = new System.Windows.Forms.CheckBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridPersona)).BeginInit();
             this.SuspendLayout();
             // 
@@ -179,6 +182,7 @@
             // rdbHombre
             // 
             this.rdbHombre.AutoSize = true;
+            this.rdbHombre.Checked = true;
             this.rdbHombre.Location = new System.Drawing.Point(390, 293);
             this.rdbHombre.Name = "rdbHombre";
             this.rdbHombre.Size = new System.Drawing.Size(77, 20);
@@ -195,14 +199,13 @@
             this.rdbMujer.Name = "rdbMujer";
             this.rdbMujer.Size = new System.Drawing.Size(61, 20);
             this.rdbMujer.TabIndex = 16;
-            this.rdbMujer.TabStop = true;
             this.rdbMujer.Text = "Mujer";
             this.rdbMujer.UseVisualStyleBackColor = true;
             this.rdbMujer.CheckedChanged += new System.EventHandler(this.rdbMujer_CheckedChanged);
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(775, 103);
+            this.btnRegistrar.Location = new System.Drawing.Point(772, 157);
             this.btnRegistrar.Name = "btnRegistrar";
             this.btnRegistrar.Size = new System.Drawing.Size(173, 40);
             this.btnRegistrar.TabIndex = 17;
@@ -212,21 +215,25 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(775, 169);
+            this.btnEliminar.Enabled = false;
+            this.btnEliminar.Location = new System.Drawing.Point(772, 223);
             this.btnEliminar.Name = "btnEliminar";
             this.btnEliminar.Size = new System.Drawing.Size(173, 40);
             this.btnEliminar.TabIndex = 18;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = true;
+            this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // btnEditar
             // 
-            this.btnEditar.Location = new System.Drawing.Point(775, 224);
+            this.btnEditar.Enabled = false;
+            this.btnEditar.Location = new System.Drawing.Point(772, 278);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(173, 40);
             this.btnEditar.TabIndex = 19;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // gridPersona
             // 
@@ -239,12 +246,44 @@
             this.gridPersona.Size = new System.Drawing.Size(895, 206);
             this.gridPersona.TabIndex = 20;
             // 
+            // txtBuscarPerssona
+            // 
+            this.txtBuscarPerssona.Enabled = false;
+            this.txtBuscarPerssona.Location = new System.Drawing.Point(772, 52);
+            this.txtBuscarPerssona.Name = "txtBuscarPerssona";
+            this.txtBuscarPerssona.Size = new System.Drawing.Size(182, 22);
+            this.txtBuscarPerssona.TabIndex = 21;
+            this.txtBuscarPerssona.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscarPerssona_KeyPress);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(849, 77);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(105, 16);
+            this.label9.TabIndex = 22;
+            this.label9.Text = "(presionar enter)";
+            // 
+            // ckbuscar
+            // 
+            this.ckbuscar.AutoSize = true;
+            this.ckbuscar.Location = new System.Drawing.Point(752, 28);
+            this.ckbuscar.Name = "ckbuscar";
+            this.ckbuscar.Size = new System.Drawing.Size(125, 20);
+            this.ckbuscar.TabIndex = 24;
+            this.ckbuscar.Text = "Buscar Persona";
+            this.ckbuscar.UseVisualStyleBackColor = true;
+            this.ckbuscar.CheckedChanged += new System.EventHandler(this.ckbuscar_CheckedChanged);
+            // 
             // FrmPersonas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1044, 589);
+            this.Controls.Add(this.ckbuscar);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtBuscarPerssona);
             this.Controls.Add(this.gridPersona);
             this.Controls.Add(this.btnEditar);
             this.Controls.Add(this.btnEliminar);
@@ -298,5 +337,8 @@
         private System.Windows.Forms.Button btnEliminar;
         private System.Windows.Forms.Button btnEditar;
         private System.Windows.Forms.DataGridView gridPersona;
+        private System.Windows.Forms.TextBox txtBuscarPerssona;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.CheckBox ckbuscar;
     }
 }
