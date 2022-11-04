@@ -16,5 +16,10 @@ namespace DESIGNER.Mantenimientos
         {
             InitializeComponent();
         }
+
+        private void btnGuardarGrupos_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
