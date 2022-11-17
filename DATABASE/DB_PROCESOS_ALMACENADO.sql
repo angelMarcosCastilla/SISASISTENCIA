@@ -53,7 +53,7 @@ CREATE PROCEDURE SPU_USUARIO_BUSCAR
 @idusuario		INT
 AS BEGIN
 	SELECT * FROM USUARIOS
-	WHERE idpersona=@idusuario
+	WHERE idusuario=@idusuario
 END 
 GO
 

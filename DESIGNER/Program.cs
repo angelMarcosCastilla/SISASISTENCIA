@@ -1,4 +1,5 @@
-﻿using DESIGNER.Mantenimientos;
+﻿using BOL;
+using DESIGNER.Mantenimientos;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,7 +18,7 @@ namespace DESIGNER
         {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Login());
+            Application.Run(new Dashboard("angel"));
         }
     }
 }
