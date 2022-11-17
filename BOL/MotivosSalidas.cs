@@ -26,7 +26,7 @@ namespace BOL
 
         public void registrarMotivosSalida(string motivosalida)
         {
-            SqlCommand comando = new SqlCommand("SPU_PERSONAS_REGISTRAR", acceso.getConexion());
+            SqlCommand comando = new SqlCommand("SPU_REGISTRAR_MOTIVOSSALIDA", acceso.getConexion());
             comando.CommandType = CommandType.StoredProcedure;
             acceso.abrirConexion();
             comando.Parameters.AddWithValue("@motivosalida", motivosalida);
@@ -34,12 +34,13 @@ namespace BOL
             acceso.cerrarConexion();
         }
 
-        public void editarMotivosSalidas(string motivosalida)
+        public void editarMotivosSalidas(string motivosalida, int idmotivo)
         {
             SqlCommand comando = new SqlCommand("SPU_EDITAR_MOTIVOSSALIDA", acceso.getConexion());
             comando.CommandType = CommandType.StoredProcedure;
             acceso.abrirConexion();
             comando.Parameters.AddWithValue("@motivosalida", motivosalida);
+            comando.Parameters.AddWithValue("@idmotivo", idmotivo);
             comando.ExecuteNonQuery();
             acceso.cerrarConexion();
         }
@@ -47,7 +48,7 @@ namespace BOL
         public DataTable buscarMotivosSalidas(int idmotivo)
         {
             DataTable data = new DataTable();
-            SqlCommand comando = new SqlCommand("SPU_BUSCAR_GRUPOS", acceso.getConexion());
+            SqlCommand comando = new SqlCommand("SPU_BUSCAR_MOTIVOSSALIDA", acceso.getConexion());
             comando.CommandType = CommandType.StoredProcedure;
             acceso.abrirConexion();
             comando.Parameters.AddWithValue("@idmotivo", idmotivo);

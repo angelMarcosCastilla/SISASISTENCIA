@@ -21,9 +21,9 @@ namespace BOL
             return data;
         }
 
-        public void registrarGrupos(string grado, string seccion, string turno)
+        public void registrarGrupos(int grado, string seccion, char turno)
         {
-            SqlCommand comando = new SqlCommand("SPU_PERSONAS_REGISTRAR", acceso.getConexion());
+            SqlCommand comando = new SqlCommand("SPU_REGISTRAR_GRUPOS", acceso.getConexion());
             comando.CommandType = CommandType.StoredProcedure;
             acceso.abrirConexion();
             comando.Parameters.AddWithValue("@grado", grado);
@@ -33,7 +33,7 @@ namespace BOL
             acceso.cerrarConexion();
         }
 
-        public void editarGrupos(string grado, string seccion, string turno)
+        public void editarGrupos(int grado, string seccion, char turno, int idgrupo)
         {
             SqlCommand comando = new SqlCommand("SPU_EDITAR_GRUPOS", acceso.getConexion());
             comando.CommandType = CommandType.StoredProcedure;
@@ -41,6 +41,7 @@ namespace BOL
             comando.Parameters.AddWithValue("@grado", grado);
             comando.Parameters.AddWithValue("@seccion", seccion);
             comando.Parameters.AddWithValue("@turno", turno);
+            comando.Parameters.AddWithValue("@idgrupo", idgrupo);
             comando.ExecuteNonQuery();
             acceso.cerrarConexion();
         }
@@ -75,6 +76,16 @@ namespace BOL
             data.Load(comando.ExecuteReader());
             acceso.cerrarConexion();
 
+            return data;
+        }
+
+        public DataTable ListarGruposActivos()
+        {
+            DataTable data = new DataTable();
+            acceso.abrirConexion();
+            SqlDataAdapter adapter = new SqlDataAdapter("SPU_LISTAR_GRUPOS_ACTIVOS", acceso.getConexion());
+            adapter.Fill(data);
+            acceso.cerrarConexion();
             return data;
         }
 

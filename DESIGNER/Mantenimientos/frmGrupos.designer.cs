@@ -34,120 +34,177 @@
             this.txtSeccion = new System.Windows.Forms.TextBox();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
-            this.rbtnMañana = new System.Windows.Forms.RadioButton();
-            this.rbtnTarde = new System.Windows.Forms.RadioButton();
+            this.rbtnM = new System.Windows.Forms.RadioButton();
+            this.rbtnT = new System.Windows.Forms.RadioButton();
             this.btnGuardarGrupos = new System.Windows.Forms.Button();
+            this.btnEliminarGrupos = new System.Windows.Forms.Button();
+            this.btnEditarGrupos = new System.Windows.Forms.Button();
+            this.ckbuscar = new System.Windows.Forms.CheckBox();
+            this.label9 = new System.Windows.Forms.Label();
+            this.txtBuscarGrupos = new System.Windows.Forms.TextBox();
             ((System.ComponentModel.ISupportInitialize)(this.gridGrupos)).BeginInit();
             this.SuspendLayout();
             // 
             // gridGrupos
             // 
             this.gridGrupos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.gridGrupos.Location = new System.Drawing.Point(44, 246);
-            this.gridGrupos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.gridGrupos.Location = new System.Drawing.Point(33, 200);
             this.gridGrupos.Name = "gridGrupos";
             this.gridGrupos.RowHeadersWidth = 51;
-            this.gridGrupos.Size = new System.Drawing.Size(973, 226);
+            this.gridGrupos.Size = new System.Drawing.Size(730, 184);
             this.gridGrupos.TabIndex = 0;
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(65, 106);
-            this.label1.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label1.Location = new System.Drawing.Point(49, 86);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(45, 16);
+            this.label1.Size = new System.Drawing.Size(36, 13);
             this.label1.TabIndex = 1;
             this.label1.Text = "Grado";
             // 
             // txtGrado
             // 
-            this.txtGrado.Location = new System.Drawing.Point(69, 137);
-            this.txtGrado.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtGrado.Location = new System.Drawing.Point(52, 111);
             this.txtGrado.Name = "txtGrado";
-            this.txtGrado.Size = new System.Drawing.Size(132, 22);
+            this.txtGrado.Size = new System.Drawing.Size(100, 20);
             this.txtGrado.TabIndex = 2;
             // 
             // txtSeccion
             // 
-            this.txtSeccion.Location = new System.Drawing.Point(316, 137);
-            this.txtSeccion.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.txtSeccion.Location = new System.Drawing.Point(237, 111);
             this.txtSeccion.Name = "txtSeccion";
-            this.txtSeccion.Size = new System.Drawing.Size(132, 22);
+            this.txtSeccion.Size = new System.Drawing.Size(100, 20);
             this.txtSeccion.TabIndex = 3;
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(312, 106);
-            this.label2.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label2.Location = new System.Drawing.Point(234, 86);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(56, 16);
+            this.label2.Size = new System.Drawing.Size(46, 13);
             this.label2.TabIndex = 4;
             this.label2.Text = "Seccion";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(623, 106);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Location = new System.Drawing.Point(467, 86);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(42, 16);
+            this.label3.Size = new System.Drawing.Size(35, 13);
             this.label3.TabIndex = 5;
             this.label3.Text = "Turno";
             // 
-            // rbtnMañana
+            // rbtnM
             // 
-            this.rbtnMañana.AutoSize = true;
-            this.rbtnMañana.Location = new System.Drawing.Point(527, 137);
-            this.rbtnMañana.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.rbtnMañana.Name = "rbtnMañana";
-            this.rbtnMañana.Size = new System.Drawing.Size(77, 20);
-            this.rbtnMañana.TabIndex = 6;
-            this.rbtnMañana.TabStop = true;
-            this.rbtnMañana.Text = "Mañana";
-            this.rbtnMañana.UseVisualStyleBackColor = true;
+            this.rbtnM.AutoSize = true;
+            this.rbtnM.Checked = true;
+            this.rbtnM.Location = new System.Drawing.Point(395, 111);
+            this.rbtnM.Name = "rbtnM";
+            this.rbtnM.Size = new System.Drawing.Size(64, 17);
+            this.rbtnM.TabIndex = 6;
+            this.rbtnM.TabStop = true;
+            this.rbtnM.Text = "Mañana";
+            this.rbtnM.UseVisualStyleBackColor = true;
+            this.rbtnM.CheckedChanged += new System.EventHandler(this.rbtnM_CheckedChanged);
             // 
-            // rbtnTarde
+            // rbtnT
             // 
-            this.rbtnTarde.AutoSize = true;
-            this.rbtnTarde.Location = new System.Drawing.Point(673, 137);
-            this.rbtnTarde.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
-            this.rbtnTarde.Name = "rbtnTarde";
-            this.rbtnTarde.Size = new System.Drawing.Size(65, 20);
-            this.rbtnTarde.TabIndex = 7;
-            this.rbtnTarde.TabStop = true;
-            this.rbtnTarde.Text = "Tarde";
-            this.rbtnTarde.UseVisualStyleBackColor = true;
+            this.rbtnT.AutoSize = true;
+            this.rbtnT.Location = new System.Drawing.Point(505, 111);
+            this.rbtnT.Name = "rbtnT";
+            this.rbtnT.Size = new System.Drawing.Size(53, 17);
+            this.rbtnT.TabIndex = 7;
+            this.rbtnT.Text = "Tarde";
+            this.rbtnT.UseVisualStyleBackColor = true;
+            this.rbtnT.CheckedChanged += new System.EventHandler(this.rbtnT_CheckedChanged);
             // 
             // btnGuardarGrupos
             // 
-            this.btnGuardarGrupos.Location = new System.Drawing.Point(815, 121);
-            this.btnGuardarGrupos.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
+            this.btnGuardarGrupos.Location = new System.Drawing.Point(611, 98);
             this.btnGuardarGrupos.Name = "btnGuardarGrupos";
-            this.btnGuardarGrupos.Size = new System.Drawing.Size(131, 41);
+            this.btnGuardarGrupos.Size = new System.Drawing.Size(98, 33);
             this.btnGuardarGrupos.TabIndex = 8;
             this.btnGuardarGrupos.Text = "Guardar";
             this.btnGuardarGrupos.UseVisualStyleBackColor = true;
             this.btnGuardarGrupos.Click += new System.EventHandler(this.btnGuardarGrupos_Click);
             // 
+            // btnEliminarGrupos
+            // 
+            this.btnEliminarGrupos.Enabled = false;
+            this.btnEliminarGrupos.Location = new System.Drawing.Point(611, 147);
+            this.btnEliminarGrupos.Name = "btnEliminarGrupos";
+            this.btnEliminarGrupos.Size = new System.Drawing.Size(98, 30);
+            this.btnEliminarGrupos.TabIndex = 9;
+            this.btnEliminarGrupos.Text = "Eliminar";
+            this.btnEliminarGrupos.UseVisualStyleBackColor = true;
+            this.btnEliminarGrupos.Click += new System.EventHandler(this.btnEliminarGrupos_Click);
+            // 
+            // btnEditarGrupos
+            // 
+            this.btnEditarGrupos.Enabled = false;
+            this.btnEditarGrupos.Location = new System.Drawing.Point(611, 55);
+            this.btnEditarGrupos.Name = "btnEditarGrupos";
+            this.btnEditarGrupos.Size = new System.Drawing.Size(98, 35);
+            this.btnEditarGrupos.TabIndex = 10;
+            this.btnEditarGrupos.Text = "Editar";
+            this.btnEditarGrupos.UseVisualStyleBackColor = true;
+            this.btnEditarGrupos.Click += new System.EventHandler(this.btnEditarGrupos_Click);
+            // 
+            // ckbuscar
+            // 
+            this.ckbuscar.AutoSize = true;
+            this.ckbuscar.Location = new System.Drawing.Point(37, 11);
+            this.ckbuscar.Margin = new System.Windows.Forms.Padding(2);
+            this.ckbuscar.Name = "ckbuscar";
+            this.ckbuscar.Size = new System.Drawing.Size(91, 17);
+            this.ckbuscar.TabIndex = 27;
+            this.ckbuscar.Text = "Buscar Grupo";
+            this.ckbuscar.UseVisualStyleBackColor = true;
+            this.ckbuscar.CheckedChanged += new System.EventHandler(this.ckbuscar_CheckedChanged);
+            // 
+            // label9
+            // 
+            this.label9.AutoSize = true;
+            this.label9.Location = new System.Drawing.Point(110, 51);
+            this.label9.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            this.label9.Name = "label9";
+            this.label9.Size = new System.Drawing.Size(83, 13);
+            this.label9.TabIndex = 26;
+            this.label9.Text = "(presionar enter)";
+            // 
+            // txtBuscarGrupos
+            // 
+            this.txtBuscarGrupos.Enabled = false;
+            this.txtBuscarGrupos.Location = new System.Drawing.Point(52, 30);
+            this.txtBuscarGrupos.Margin = new System.Windows.Forms.Padding(2);
+            this.txtBuscarGrupos.Name = "txtBuscarGrupos";
+            this.txtBuscarGrupos.Size = new System.Drawing.Size(138, 20);
+            this.txtBuscarGrupos.TabIndex = 25;
+            this.txtBuscarGrupos.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.txtBuscarGrupos_KeyPress);
+            // 
             // frmGrupos
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1067, 554);
+            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.Controls.Add(this.ckbuscar);
+            this.Controls.Add(this.label9);
+            this.Controls.Add(this.txtBuscarGrupos);
+            this.Controls.Add(this.btnEditarGrupos);
+            this.Controls.Add(this.btnEliminarGrupos);
             this.Controls.Add(this.btnGuardarGrupos);
-            this.Controls.Add(this.rbtnTarde);
-            this.Controls.Add(this.rbtnMañana);
+            this.Controls.Add(this.rbtnT);
+            this.Controls.Add(this.rbtnM);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.txtSeccion);
             this.Controls.Add(this.txtGrado);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.gridGrupos);
-            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "frmGrupos";
             this.Text = "frmGrupos";
+            this.Load += new System.EventHandler(this.frmGrupos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.gridGrupos)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -162,8 +219,13 @@
         private System.Windows.Forms.TextBox txtSeccion;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.RadioButton rbtnMañana;
-        private System.Windows.Forms.RadioButton rbtnTarde;
+        private System.Windows.Forms.RadioButton rbtnM;
+        private System.Windows.Forms.RadioButton rbtnT;
         private System.Windows.Forms.Button btnGuardarGrupos;
+        private System.Windows.Forms.Button btnEliminarGrupos;
+        private System.Windows.Forms.Button btnEditarGrupos;
+        private System.Windows.Forms.CheckBox ckbuscar;
+        private System.Windows.Forms.Label label9;
+        private System.Windows.Forms.TextBox txtBuscarGrupos;
     }
 }

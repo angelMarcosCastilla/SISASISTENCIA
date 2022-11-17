@@ -12,6 +12,7 @@ EXEC SPU_EDITAR_GRUPOS 1, 1, 'A', 'M'
 EXEC SPU_EDITAR_GRUPOS 3, 1, 'C', 'M'
 EXEC SPU_EDITAR_GRUPOS 4, 1, 'D', 'T'
 
+EXEC SPU_REGISTRAR_MOTIVOSSALIDA 'Problemas familiares'
 
 -- insertar personas
 

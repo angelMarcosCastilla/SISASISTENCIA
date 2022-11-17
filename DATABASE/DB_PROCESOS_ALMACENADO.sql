@@ -80,7 +80,7 @@ CREATE PROCEDURE SPU_PERSONAS_REGISTRAR
 @celular			CHAR(9),
 @sexo				CHAR(1)
 AS BEGIN
-	INSERT INTO PERSONAS(apellidos, nombres, dni, fehanacimineto, direccion, email, celular, sexo)
+	INSERT INTO PERSONAS(apellidos, nombres, dni, fechanacimiento, direccion, email, celular, sexo)
 	VALUES (@apellidos, @nombres, @dni, @fechanacimineto,@direccion,@email, @celular, @sexo)
 END
 GO
@@ -137,6 +137,12 @@ GO
 CREATE PROCEDURE SPU_LISTAR_GRUPOS
 AS BEGIN
 	SELECT * FROM GRUPOS
+END
+GO
+
+CREATE PROCEDURE SPU_LISTAR_GRUPOS_ACTIVOS
+AS BEGIN
+	SELECT * FROM GRUPOS WHERE ESTADO = 1
 END
 GO
 
