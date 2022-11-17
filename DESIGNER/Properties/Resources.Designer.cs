@@ -83,6 +83,26 @@ namespace DESIGNER.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap asistenciaIcon {
+            get {
+                object obj = ResourceManager.GetObject("asistenciaIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap gruposIcon {
+            get {
+                object obj = ResourceManager.GetObject("gruposIcon", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap icon_asistencia {
             get {
                 object obj = ResourceManager.GetObject("icon-asistencia", resourceCulture);
@@ -96,6 +116,16 @@ namespace DESIGNER.Properties {
         internal static System.Drawing.Bitmap icon_user {
             get {
                 object obj = ResourceManager.GetObject("icon-user", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap iconMotivo {
+            get {
+                object obj = ResourceManager.GetObject("iconMotivo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
@@ -156,6 +186,16 @@ namespace DESIGNER.Properties {
         internal static System.Drawing.Bitmap logoutIcon__2_ {
             get {
                 object obj = ResourceManager.GetObject("logoutIcon (2)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap motivoSalidaIcon {
+            get {
+                object obj = ResourceManager.GetObject("motivoSalidaIcon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

@@ -13,10 +13,11 @@ namespace DESIGNER
    public partial class Dashboard : Form
    {
         private Form formularioActual;
-      public Dashboard()
+      public Dashboard(string nombresuario)
       {
          InitializeComponent();
-      }
+          lbluserInfo.Text = " " + nombresuario;
+        }
 
         private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
         {
@@ -25,7 +26,9 @@ namespace DESIGNER
 
         private void Dashboard_Load(object sender, EventArgs e)
         {
-
+            OpenChildForm(new FrmPersonas());
+            activarMenuActivo("persona");
+            
         }
         
         private void OpenChildForm(Form childForm)
@@ -48,31 +51,66 @@ namespace DESIGNER
         private void button1_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FrmPersonas());
+            activarMenuActivo("persona");
         }
 
         private void btnUsuario_Click(object sender, EventArgs e)
         {
             OpenChildForm(new FrmUsuarios());
+            activarMenuActivo("usuario");
         }
 
-        private void panelForm_Paint(object sender, PaintEventArgs e)
+        private void btnMotivo_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new frmMotivossalida());
+            activarMenuActivo("motivo");
         }
 
-        private void btnAsistencias_Click(object sender, EventArgs e)
+        private void btnGrupos_Click(object sender, EventArgs e)
         {
-
+            OpenChildForm(new frmGrupos());
+            activarMenuActivo("grupo");
         }
 
-        private void label1_Click(object sender, EventArgs e)
+        private void activarMenuActivo(string menuActivo)
         {
-
+            btnPersonas.BackColor = Color.Transparent;
+            btnUsuario.BackColor = Color.Transparent;
+            btnMotivo.BackColor = Color.Transparent;
+            btnGrupos.BackColor = Color.Transparent;
+            btnAsistencia.BackColor = Color.Transparent;
+            btnmatricula.BackColor = Color.Transparent;
+            if (menuActivo == "persona")
+             {
+                    btnPersonas.BackColor = Color.FromArgb(0, 122, 104);
+             }
+            else if (menuActivo == "usuario")
+             {
+                    btnUsuario.BackColor = Color.FromArgb(0, 122, 104);
+             }
+            else if (menuActivo == "motivo")
+             {
+                    btnMotivo.BackColor = Color.FromArgb(0, 122, 104);
+             }
+            else if (menuActivo == "grupo")
+             {
+                    btnGrupos.BackColor = Color.FromArgb(0, 122, 104);
+             }
+            else if(menuActivo == "asistencia")
+            {
+                btnAsistencia.BackColor = Color.FromArgb(0, 122, 104);
+            }else if (menuActivo == "matricula")
+            {
+                btnmatricula.BackColor = Color.FromArgb(0, 122, 104);
+            }
         }
 
-        private void label1_Click_1(object sender, EventArgs e)
+        private void btnCerrasSession_Click(object sender, EventArgs e)
         {
-
+            // cerrar session
+            Login login = new Login();
+            login.Show();
+            this.Hide();
         }
     }
 }

@@ -29,7 +29,10 @@
       private void InitializeComponent()
       {
             this.panel1 = new System.Windows.Forms.Panel();
-            this.btnAsistencias = new System.Windows.Forms.Button();
+            this.btnMotivo = new System.Windows.Forms.Button();
+            this.btnGrupos = new System.Windows.Forms.Button();
+            this.btnAsistencia = new System.Windows.Forms.Button();
+            this.btnmatricula = new System.Windows.Forms.Button();
             this.btnUsuario = new System.Windows.Forms.Button();
             this.btnPersonas = new System.Windows.Forms.Button();
             this.panel2 = new System.Windows.Forms.Panel();
@@ -39,6 +42,8 @@
             this.btnCerrasSession = new System.Windows.Forms.Button();
             this.panelForm = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
+            this.label3 = new System.Windows.Forms.Label();
+            this.lbluserInfo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -47,7 +52,10 @@
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(39)))), ((int)(((byte)(70)))), ((int)(((byte)(199)))));
-            this.panel1.Controls.Add(this.btnAsistencias);
+            this.panel1.Controls.Add(this.btnMotivo);
+            this.panel1.Controls.Add(this.btnGrupos);
+            this.panel1.Controls.Add(this.btnAsistencia);
+            this.panel1.Controls.Add(this.btnmatricula);
             this.panel1.Controls.Add(this.btnUsuario);
             this.panel1.Controls.Add(this.btnPersonas);
             this.panel1.Controls.Add(this.panel2);
@@ -57,28 +65,94 @@
             this.panel1.Size = new System.Drawing.Size(236, 693);
             this.panel1.TabIndex = 1;
             // 
-            // btnAsistencias
+            // btnMotivo
             // 
-            this.btnAsistencias.BackColor = System.Drawing.Color.Transparent;
-            this.btnAsistencias.Dock = System.Windows.Forms.DockStyle.Top;
-            this.btnAsistencias.FlatAppearance.BorderSize = 0;
-            this.btnAsistencias.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(64)))), ((int)(((byte)(180)))));
-            this.btnAsistencias.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(64)))), ((int)(((byte)(190)))));
-            this.btnAsistencias.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnAsistencias.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnAsistencias.ForeColor = System.Drawing.Color.White;
-            this.btnAsistencias.Image = global::DESIGNER.Properties.Resources.icon_asistencia;
-            this.btnAsistencias.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAsistencias.Location = new System.Drawing.Point(0, 297);
-            this.btnAsistencias.Name = "btnAsistencias";
-            this.btnAsistencias.Padding = new System.Windows.Forms.Padding(10, 0, 0, 3);
-            this.btnAsistencias.Size = new System.Drawing.Size(236, 70);
-            this.btnAsistencias.TabIndex = 4;
-            this.btnAsistencias.Text = "   Asistencias";
-            this.btnAsistencias.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAsistencias.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnAsistencias.UseVisualStyleBackColor = false;
-            this.btnAsistencias.Click += new System.EventHandler(this.btnAsistencias_Click);
+            this.btnMotivo.BackColor = System.Drawing.Color.Transparent;
+            this.btnMotivo.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnMotivo.FlatAppearance.BorderSize = 0;
+            this.btnMotivo.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(64)))), ((int)(((byte)(180)))));
+            this.btnMotivo.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(64)))), ((int)(((byte)(190)))));
+            this.btnMotivo.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnMotivo.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnMotivo.ForeColor = System.Drawing.Color.White;
+            this.btnMotivo.Image = global::DESIGNER.Properties.Resources.iconMotivo;
+            this.btnMotivo.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnMotivo.Location = new System.Drawing.Point(0, 507);
+            this.btnMotivo.Name = "btnMotivo";
+            this.btnMotivo.Padding = new System.Windows.Forms.Padding(10, 0, 0, 3);
+            this.btnMotivo.Size = new System.Drawing.Size(236, 70);
+            this.btnMotivo.TabIndex = 7;
+            this.btnMotivo.Text = "  Motivo Salida";
+            this.btnMotivo.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnMotivo.UseVisualStyleBackColor = false;
+            this.btnMotivo.Click += new System.EventHandler(this.btnMotivo_Click);
+            // 
+            // btnGrupos
+            // 
+            this.btnGrupos.BackColor = System.Drawing.Color.Transparent;
+            this.btnGrupos.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnGrupos.FlatAppearance.BorderSize = 0;
+            this.btnGrupos.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(64)))), ((int)(((byte)(180)))));
+            this.btnGrupos.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(64)))), ((int)(((byte)(190)))));
+            this.btnGrupos.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnGrupos.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnGrupos.ForeColor = System.Drawing.Color.White;
+            this.btnGrupos.Image = global::DESIGNER.Properties.Resources.gruposIcon;
+            this.btnGrupos.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGrupos.Location = new System.Drawing.Point(0, 437);
+            this.btnGrupos.Name = "btnGrupos";
+            this.btnGrupos.Padding = new System.Windows.Forms.Padding(10, 0, 0, 3);
+            this.btnGrupos.Size = new System.Drawing.Size(236, 70);
+            this.btnGrupos.TabIndex = 6;
+            this.btnGrupos.Text = "  Grupos";
+            this.btnGrupos.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnGrupos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnGrupos.UseVisualStyleBackColor = false;
+            this.btnGrupos.Click += new System.EventHandler(this.btnGrupos_Click);
+            // 
+            // btnAsistencia
+            // 
+            this.btnAsistencia.BackColor = System.Drawing.Color.Transparent;
+            this.btnAsistencia.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnAsistencia.FlatAppearance.BorderSize = 0;
+            this.btnAsistencia.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(64)))), ((int)(((byte)(180)))));
+            this.btnAsistencia.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(64)))), ((int)(((byte)(190)))));
+            this.btnAsistencia.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAsistencia.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAsistencia.ForeColor = System.Drawing.Color.White;
+            this.btnAsistencia.Image = global::DESIGNER.Properties.Resources.asistenciaIcon;
+            this.btnAsistencia.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAsistencia.Location = new System.Drawing.Point(0, 367);
+            this.btnAsistencia.Name = "btnAsistencia";
+            this.btnAsistencia.Padding = new System.Windows.Forms.Padding(10, 0, 0, 3);
+            this.btnAsistencia.Size = new System.Drawing.Size(236, 70);
+            this.btnAsistencia.TabIndex = 5;
+            this.btnAsistencia.Text = "   Asistencias";
+            this.btnAsistencia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnAsistencia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnAsistencia.UseVisualStyleBackColor = false;
+            // 
+            // btnmatricula
+            // 
+            this.btnmatricula.BackColor = System.Drawing.Color.Transparent;
+            this.btnmatricula.Dock = System.Windows.Forms.DockStyle.Top;
+            this.btnmatricula.FlatAppearance.BorderSize = 0;
+            this.btnmatricula.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(64)))), ((int)(((byte)(180)))));
+            this.btnmatricula.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(32)))), ((int)(((byte)(64)))), ((int)(((byte)(190)))));
+            this.btnmatricula.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnmatricula.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnmatricula.ForeColor = System.Drawing.Color.White;
+            this.btnmatricula.Image = global::DESIGNER.Properties.Resources.icon_asistencia;
+            this.btnmatricula.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnmatricula.Location = new System.Drawing.Point(0, 297);
+            this.btnmatricula.Name = "btnmatricula";
+            this.btnmatricula.Padding = new System.Windows.Forms.Padding(10, 0, 0, 3);
+            this.btnmatricula.Size = new System.Drawing.Size(236, 70);
+            this.btnmatricula.TabIndex = 4;
+            this.btnmatricula.Text = "   Matricula";
+            this.btnmatricula.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnmatricula.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnmatricula.UseVisualStyleBackColor = false;
             // 
             // btnUsuario
             // 
@@ -159,11 +233,12 @@
             this.label1.Size = new System.Drawing.Size(144, 32);
             this.label1.TabIndex = 0;
             this.label1.Text = "SISTEMA";
-            this.label1.Click += new System.EventHandler(this.label1_Click_1);
             // 
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.White;
+            this.panel3.Controls.Add(this.lbluserInfo);
+            this.panel3.Controls.Add(this.label3);
             this.panel3.Controls.Add(this.btnCerrasSession);
             this.panel3.Dock = System.Windows.Forms.DockStyle.Top;
             this.panel3.Location = new System.Drawing.Point(236, 0);
@@ -190,6 +265,7 @@
             this.btnCerrasSession.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnCerrasSession.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCerrasSession.UseVisualStyleBackColor = true;
+            this.btnCerrasSession.Click += new System.EventHandler(this.btnCerrasSession_Click);
             // 
             // panelForm
             // 
@@ -199,7 +275,6 @@
             this.panelForm.Name = "panelForm";
             this.panelForm.Size = new System.Drawing.Size(1062, 636);
             this.panelForm.TabIndex = 6;
-            this.panelForm.Paint += new System.Windows.Forms.PaintEventHandler(this.panelForm_Paint);
             // 
             // panel4
             // 
@@ -209,6 +284,26 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1062, 3);
             this.panel4.TabIndex = 7;
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(26, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(138, 25);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Bienvenido : ";
+            // 
+            // lbluserInfo
+            // 
+            this.lbluserInfo.AutoSize = true;
+            this.lbluserInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbluserInfo.Location = new System.Drawing.Point(160, 22);
+            this.lbluserInfo.Name = "lbluserInfo";
+            this.lbluserInfo.Size = new System.Drawing.Size(24, 20);
+            this.lbluserInfo.TabIndex = 2;
+            this.lbluserInfo.Text = "   ";
             // 
             // Dashboard
             // 
@@ -229,13 +324,14 @@
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
             this.panel3.ResumeLayout(false);
+            this.panel3.PerformLayout();
             this.ResumeLayout(false);
 
       }
 
         #endregion
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Button btnAsistencias;
+        private System.Windows.Forms.Button btnmatricula;
         private System.Windows.Forms.Button btnUsuario;
         private System.Windows.Forms.Button btnPersonas;
         private System.Windows.Forms.Panel panel2;
@@ -245,5 +341,10 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Button btnCerrasSession;
         private System.Windows.Forms.Panel panel4;
+        private System.Windows.Forms.Button btnGrupos;
+        private System.Windows.Forms.Button btnAsistencia;
+        private System.Windows.Forms.Button btnMotivo;
+        private System.Windows.Forms.Label lbluserInfo;
+        private System.Windows.Forms.Label label3;
     }
 }

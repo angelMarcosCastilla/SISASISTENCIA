@@ -40,7 +40,8 @@ namespace DESIGNER
                     bool login = Crypter.CheckPassword(claveAcceso, claveEncriptada);
                     if (login)
                     {
-                        Dashboard dashboard = new Dashboard();
+                        string infoUser = resultado.Rows[0]["nombres"].ToString() + " " + resultado.Rows[0]["apellidos"].ToString();
+                        Dashboard dashboard = new Dashboard(infoUser);
                         dashboard.Show();
                         this.Hide();
                     }
@@ -86,6 +87,11 @@ namespace DESIGNER
             {
                 txtPassword.UseSystemPasswordChar = true;
             }
+        }
+
+        private void Login_FormClosing(object sender, FormClosingEventArgs e)
+        {
+            Application.Exit();
         }
     }
 }
