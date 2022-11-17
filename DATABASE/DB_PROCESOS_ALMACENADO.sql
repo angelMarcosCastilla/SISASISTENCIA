@@ -22,6 +22,13 @@ AS BEGIN
 	INSERT INTO USUARIOS(idpersona, nombreusuario, claveacceso) VALUES (@idpersona, @nombreusuario, @claveaccesso)
 END
 GO
+CREATE PROCEDURE SPU_USUARIO_REGISTRAR_SIN_CLAVE
+@idpersona			INT,
+@nombreusuario		VARCHAR(50)
+AS BEGIN
+	INSERT INTO USUARIOS(idpersona, nombreusuario) VALUES (@idpersona, @nombreusuario)
+END
+GO
 
 CREATE PROCEDURE SPU_USUARIO_EDITAR
 	@nombreusuario		VARCHAR(50),
