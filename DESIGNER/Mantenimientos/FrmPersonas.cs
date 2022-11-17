@@ -113,11 +113,38 @@ namespace DESIGNER.Mantenimientos
                                 rdbMujer.Checked = true;
                                 sexo = 'F';
                             }
-
+                            txtNombres.Focus();
                         }
                         else
                         {
-                            MessageBox.Show("La persona esta inactiva");
+                            if(preguntar("La persona esta inactiva deseas Activarla ?") == DialogResult.Yes)
+                            {
+                                
+                                persona.activarPersona(id);
+                                listarPersonas();
+
+                                txtNombres.Text = resultado.Rows[0]["nombres"].ToString();
+                                txtApellidos.Text = resultado.Rows[0]["apellidos"].ToString();
+                                txtDireccion.Text = resultado.Rows[0]["direccion"].ToString();
+                                txtDni.Text = resultado.Rows[0]["dni"].ToString();
+                                txtCelular.Text = resultado.Rows[0]["celular"].ToString();
+                                txtEmail.Text = resultado.Rows[0]["email"].ToString();
+                                txtFechaNacimiento.Text = resultado.Rows[0]["fechanacimiento"].ToString();
+                                string sexoData = resultado.Rows[0]["sexo"].ToString();
+                                if (sexoData == "M")
+                                {
+                                    rdbHombre.Checked = true;
+                                    rdbMujer.Checked = false;
+                                    sexo = 'M';
+                                }
+                                else
+                                {
+                                    rdbHombre.Checked = false;
+                                    rdbMujer.Checked = true;
+                                    sexo = 'F';
+                                }
+                                txtNombres.Focus();
+                            }
                         }
                     }
                     else
@@ -178,6 +205,10 @@ namespace DESIGNER.Mantenimientos
             {
                 MessageBox.Show("error Al Editar Persona");
             }
+        }
+        private DialogResult preguntar(string textoPregunta)
+        {
+            return MessageBox.Show(textoPregunta, "Sistema de cursos", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
         }
     }
 }
