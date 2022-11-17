@@ -100,5 +100,17 @@ namespace BOL
          return data;
       }
 
+        public void editarUsusarioSinClave(int idusuario, string nombreusuario)
+        {
+                SqlCommand comando = new SqlCommand("SPU_USUARIO_REGISTRAR_SIN_CLAVE", acceso.getConexion());
+                comando.CommandType = CommandType.StoredProcedure;
+                acceso.abrirConexion();
+                comando.Parameters.AddWithValue("@idusuario", idusuario);
+                comando.Parameters.AddWithValue("@nombreusuario", nombreusuario);
+
+                comando.ExecuteNonQuery();
+                acceso.cerrarConexion();
+        }
+
    }
 }

@@ -32,17 +32,17 @@ namespace DESIGNER.Mantenimientos
             buscar = !buscar;
             if (buscar)
             {
-                btnAgregar.Enabled = false;
-                btnEditar.Enabled = true;
-                btnEliminar.Enabled = true;
+                btnAgregar.Visible = false;
+                btnEditar.Visible = true;
+                btnEliminar.Visible= true;
                 txtBuscarUsuario.Enabled = true;
                
             }
             else
             {
-                btnAgregar.Enabled = true;
-                btnEditar.Enabled = false;
-                btnEliminar.Enabled = false;
+                btnAgregar.Visible = true;
+                btnEditar.Visible = false;
+                btnEliminar.Visible = false;
                 txtBuscarUsuario.Enabled = false;
                 lblClaveAccesso.Text = "Clave Acceso";
                 llblHelp.Text = "";
@@ -122,6 +122,8 @@ namespace DESIGNER.Mantenimientos
                     usuario.eliminarUsuario(idusuario);
                     listarUsuarios();
                     limpiarform();
+                    lblClaveAccesso.Text = "Clave Acceso";
+                    llblHelp.Text = "";
                 }
             }
             catch
@@ -180,7 +182,31 @@ namespace DESIGNER.Mantenimientos
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
+            try
+            {
+                string nombreusuario = txtnombreusuario.Text;
+                string claveacceso = txtclaveacceso.Text;
+                int idusuario = Convert.ToInt16(txtBuscarUsuario.Text);
 
+
+                if(claveacceso != "")
+                {
+                    string claveEncriptada = Crypter.Blowfish.Crypt(claveacceso);
+                    usuario.editarUsuario(idusuario, claveEncriptada, nombreusuario);
+                }
+                else
+                {
+                    usuario.editarUsusarioSinClave(idusuario, nombreusuario);
+                }
+                
+                lblClaveAccesso.Text = "Clave Acceso";
+                llblHelp.Text = "";
+                listarUsuarios();
+                limpiarform();
+            }
+            catch{
+                MessageBox.Show("Error al editar usuario");
+            }
         }
     }
 }

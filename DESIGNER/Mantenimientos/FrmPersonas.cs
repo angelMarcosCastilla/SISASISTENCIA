@@ -178,9 +178,9 @@ namespace DESIGNER.Mantenimientos
         {
             esBuscar = !esBuscar;
             txtBuscarPerssona.Enabled = esBuscar;
-            btnEditar.Enabled = esBuscar;
-            btnEliminar.Enabled = esBuscar;
-            btnRegistrar.Enabled = !esBuscar;
+            btnEditar.Visible = esBuscar;
+            btnEliminar.Visible = esBuscar;
+            btnRegistrar.Visible = !esBuscar;
             limpiarFormulario();
         }
 

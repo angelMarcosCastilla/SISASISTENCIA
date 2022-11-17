@@ -122,7 +122,6 @@
             // btnEditar
             // 
             this.btnEditar.BackColor = System.Drawing.Color.Orange;
-            this.btnEditar.Enabled = false;
             this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEditar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEditar.ForeColor = System.Drawing.SystemColors.Control;
@@ -132,12 +131,12 @@
             this.btnEditar.TabIndex = 8;
             this.btnEditar.Text = "Editar";
             this.btnEditar.UseVisualStyleBackColor = false;
+            this.btnEditar.Visible = false;
             this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnEliminar
             // 
             this.btnEliminar.BackColor = System.Drawing.Color.Firebrick;
-            this.btnEliminar.Enabled = false;
             this.btnEliminar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnEliminar.ForeColor = System.Drawing.Color.Snow;
@@ -147,6 +146,7 @@
             this.btnEliminar.TabIndex = 9;
             this.btnEliminar.Text = "Eliminar";
             this.btnEliminar.UseVisualStyleBackColor = false;
+            this.btnEliminar.Visible = false;
             this.btnEliminar.Click += new System.EventHandler(this.btnEliminar_Click);
             // 
             // ckbuscar
@@ -186,7 +186,7 @@
             this.llblHelp.ForeColor = System.Drawing.SystemColors.MenuHighlight;
             this.llblHelp.Location = new System.Drawing.Point(380, 167);
             this.llblHelp.Name = "llblHelp";
-            this.llblHelp.Size = new System.Drawing.Size(0, 16);
+            this.llblHelp.Size = new System.Drawing.Size(0, 15);
             this.llblHelp.TabIndex = 28;
             // 
             // FrmUsuarios
