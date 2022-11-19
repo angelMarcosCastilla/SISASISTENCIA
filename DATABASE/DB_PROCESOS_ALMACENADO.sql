@@ -107,7 +107,7 @@ AS BEGIN
 	apellidos = @apellidos,
 	nombres= @nombres,
 	dni=@dni,
-	fehanacimineto = @fechanacimineto,
+	fechanacimiento = @fechanacimineto,
 	direccion= @direccion,
 	email = @email,
 	celular = @celular,
@@ -268,10 +268,9 @@ GO
 
 CREATE PROCEDURE SPU_MATRICULA_REGISTRAR
 	@idpersona				INT,
-	@idgrupo				INT,
-	@fechamatricula		DATETIME
+	@idgrupo				INT
 AS BEGIN
-	INSERT INTO MATRICULAS(idpersona, idgrupo, fechamatricula) VALUES (@idpersona, @idgrupo, @fechamatricula)
+	INSERT INTO MATRICULAS(idpersona, idgrupo) VALUES (@idpersona, @idgrupo)
 END
 GO
 
@@ -315,24 +314,56 @@ AS BEGIN
 END
 GO
 
-CREATE PROCEDURE SPU_ASISTENCIA_REGISTRAR_SALIDA
-	@fechahorasalida		DATETIME,
-	@idusuarioautoriza		INT,
-	@fechahorapermiso		DATETIME,
-	@idmotivo				INT,
-	@descripcion			TEXT,
-	@idmatricula			INT
+CREATE PROCEDURE SPU_ASISTENCIA_MATRICULADOS
+@idpersona			INT
 AS BEGIN
-	UPDATE ASISTENCIAS SET
-	fechahorasalida = @fechahorasalida,
-	idusuarioautoriza = @idusuarioautoriza,
-	fechahorapermiso = @fechahorapermiso,
-	descripcion = @descripcion,
-	idmotivo = @idmotivo
-	WHERE idmatricula = @idmatricula
+	SELECT
+	PERSONAS.nombres,
+	PERSONAS.apellidos,
+	PERSONAS.dni,
+	MATRICULAS.idmatricula
+	FROM MATRICULAS
+	INNER JOIN PERSONAS ON PERSONAS.idpersona = MATRICULAS.idpersona
+	WHERE MATRICULAS.idpersona = @idpersona
 END
 GO
 
+
+ALTER PROCEDURE SPU_ASISTENCIA_REGISTRAR_SALIDA
+	@idusuarioautoriza		INT,
+	@fechahorapermiso		CHAR,
+	@idmotivo				INT,
+	@descripcion			VARCHAR(400),
+	@idmatricula			INT,
+	@idasistencia		    INT
+AS BEGIN
+	DECLARE @fechapermiso DATETIME;
+
+	IF @idusuarioautoriza	= 0	SET @idusuarioautoriza = NULL;
+	IF @idmotivo			= 0	SET @idmotivo = NULL;
+	IF @descripcion			= ''	SET @descripcion = NULL;
+	IF @fechahorapermiso    = 'Z'	SET @fechapermiso = GETDATE()
+	ELSE 
+	SET @fechapermiso = NULL;
+	UPDATE ASISTENCIAS SET
+	idusuarioautoriza = @idusuarioautoriza,
+	fechahorapermiso = @fechapermiso,
+	descripcion = @descripcion,
+	idmotivo = @idmotivo,
+	fechahorasalida = GETDATE()
+	WHERE idmatricula = @idmatricula AND idasistencia = @idasistencia
+END
+GO
+EXEC SPU_ASISTENCIA_REGISTRAR_SALIDA 1, 'Z', 1, 'MUERTE', 4, 10
+
+CREATE PROCEDURE SPU_FECHAINGRESO
+@idmatricula	INT
+AS BEGIN
+	SELECT TOP 1 *
+	FROM ASISTENCIAS
+	WHERE idmatricula = @idmatricula ORDER BY fechahoraentrada DESC 
+END
+GO
 
 -- sesion 
 CREATE PROCEDURE SPU_USUARIO_LOGIN

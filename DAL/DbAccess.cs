@@ -10,7 +10,7 @@ namespace DAL
 {
     public class DbAccess
     {
-        SqlConnection conexion = new SqlConnection("data source=.;database=SIS_IESUP;user id=sa;password=123456;integrated security=false");
+        SqlConnection conexion = new SqlConnection("data source=DESKTOP-2UAEKCQ;database=SIS_IESUP;user id=jesus;password=j14m11;integrated security=false");
 
         public SqlConnection getConexion()
         {

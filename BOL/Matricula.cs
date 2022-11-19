@@ -42,10 +42,11 @@ namespace BOL
          return data;
       }
 
-      public void registarMatricula(int idpersona, int idgrupo)
+      public void registrarMatricula(int idpersona, int idgrupo)
       {
          SqlCommand comando = new SqlCommand("SPU_MATRICULA_REGISTRAR", acceso.getConexion());
          comando.CommandType = CommandType.StoredProcedure;
+         acceso.abrirConexion();
          comando.Parameters.AddWithValue("@idpersona", idpersona);
          comando.Parameters.AddWithValue("@idgrupo", idgrupo);
          comando.ExecuteNonQuery();

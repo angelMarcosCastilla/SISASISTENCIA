@@ -12,11 +12,13 @@ namespace DESIGNER
 {
    public partial class Dashboard : Form
    {
-        private Form formularioActual;
-      public Dashboard(string nombresuario)
+       private Form formularioActual;
+       int id = 0;
+      public Dashboard(string nombresuario, int idusuario)
       {
          InitializeComponent();
           lbluserInfo.Text = " " + nombresuario;
+            id = idusuario;
         }
 
         private void Dashboard_FormClosing(object sender, FormClosingEventArgs e)
@@ -111,6 +113,18 @@ namespace DESIGNER
             Login login = new Login();
             login.Show();
             this.Hide();
+        }
+
+        private void btnmatricula_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmMatricula());
+            activarMenuActivo("matricula");
+        }
+
+        private void btnAsistencia_Click(object sender, EventArgs e)
+        {
+            OpenChildForm(new frmAsistencia(id));
+            activarMenuActivo("asistencia");
         }
     }
 }

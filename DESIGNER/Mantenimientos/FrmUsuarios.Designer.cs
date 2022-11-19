@@ -96,6 +96,7 @@
             // gridUsuario
             // 
             this.gridUsuario.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Left | System.Windows.Forms.AnchorStyles.Right)));
+            this.gridUsuario.AutoSizeColumnsMode = System.Windows.Forms.DataGridViewAutoSizeColumnsMode.Fill;
             this.gridUsuario.BackgroundColor = System.Drawing.SystemColors.ButtonFace;
             this.gridUsuario.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.gridUsuario.Location = new System.Drawing.Point(53, 302);

@@ -39,11 +39,11 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.lbluserInfo = new System.Windows.Forms.Label();
+            this.label3 = new System.Windows.Forms.Label();
             this.btnCerrasSession = new System.Windows.Forms.Button();
             this.panelForm = new System.Windows.Forms.Panel();
             this.panel4 = new System.Windows.Forms.Panel();
-            this.label3 = new System.Windows.Forms.Label();
-            this.lbluserInfo = new System.Windows.Forms.Label();
             this.panel1.SuspendLayout();
             this.panel2.SuspendLayout();
             this.panel3.SuspendLayout();
@@ -131,6 +131,7 @@
             this.btnAsistencia.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAsistencia.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnAsistencia.UseVisualStyleBackColor = false;
+            this.btnAsistencia.Click += new System.EventHandler(this.btnAsistencia_Click);
             // 
             // btnmatricula
             // 
@@ -153,6 +154,7 @@
             this.btnmatricula.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnmatricula.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnmatricula.UseVisualStyleBackColor = false;
+            this.btnmatricula.Click += new System.EventHandler(this.btnmatricula_Click);
             // 
             // btnUsuario
             // 
@@ -246,6 +248,26 @@
             this.panel3.Size = new System.Drawing.Size(1062, 57);
             this.panel3.TabIndex = 5;
             // 
+            // lbluserInfo
+            // 
+            this.lbluserInfo.AutoSize = true;
+            this.lbluserInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbluserInfo.Location = new System.Drawing.Point(160, 22);
+            this.lbluserInfo.Name = "lbluserInfo";
+            this.lbluserInfo.Size = new System.Drawing.Size(24, 20);
+            this.lbluserInfo.TabIndex = 2;
+            this.lbluserInfo.Text = "   ";
+            // 
+            // label3
+            // 
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.Location = new System.Drawing.Point(26, 20);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(138, 25);
+            this.label3.TabIndex = 1;
+            this.label3.Text = "Bienvenido : ";
+            // 
             // btnCerrasSession
             // 
             this.btnCerrasSession.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
@@ -284,26 +306,6 @@
             this.panel4.Name = "panel4";
             this.panel4.Size = new System.Drawing.Size(1062, 3);
             this.panel4.TabIndex = 7;
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(26, 20);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(138, 25);
-            this.label3.TabIndex = 1;
-            this.label3.Text = "Bienvenido : ";
-            // 
-            // lbluserInfo
-            // 
-            this.lbluserInfo.AutoSize = true;
-            this.lbluserInfo.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbluserInfo.Location = new System.Drawing.Point(160, 22);
-            this.lbluserInfo.Name = "lbluserInfo";
-            this.lbluserInfo.Size = new System.Drawing.Size(24, 20);
-            this.lbluserInfo.TabIndex = 2;
-            this.lbluserInfo.Text = "   ";
             // 
             // Dashboard
             // 

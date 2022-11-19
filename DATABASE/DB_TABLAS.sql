@@ -24,12 +24,13 @@ CREATE TABLE MOTIVOSSALIDA
 GO
 
 
+
 CREATE TABLE PERSONAS(
 		idpersona			INT IDENTITY(1,1) PRIMARY KEY,
 		apellidos			VARCHAR(50) NOT NULL,
 		nombres				VARCHAR(50) NOT NULL,
 		dni					CHAR(8) NOT NULL,
-		fehanacimineto		DATETIME NOT NULL,
+		fechanacimiento		DATETIME NOT NULL,
 		direccion			VARCHAR(100) NOT NULL,
 		email				VARCHAR(100) NOT NULL,
 		celular				CHAR(9) NOT NULL,
@@ -72,14 +73,17 @@ CREATE TABLE ASISTENCIAS
 	idmatricula				INT			NOT NULL,
 	fechahoraentrada		DATETIME	NOT NULL DEFAULT GETDATE(),
 	fechahorasalida			DATETIME	NULL,
-	idusuarioautoriza		INT			NOT NULL,
+	idusuarioautoriza		INT			NULL,
 	fechahorapermiso		DATETIME	NULL,
-	idmotivo				INT			NOT NULL,
-	descripcion				TEXT		NULL,
+	idmotivo				INT			NULL,
+	descripcion				VARCHAR(400)		NULL,
 
 	CONSTRAINT fk_idmatricula_Tasistencias FOREIGN KEY (idmatricula) REFERENCES MATRICULAS(idmatricula),
 	CONSTRAINT fk_idusuarioaut_Tasistencias FOREIGN KEY(idusuarioautoriza) REFERENCES USUARIOS(idusuario),
 	CONSTRAINT fk_idmotivo_Tasistencias	FOREIGN KEY (idmotivo) REFERENCES MOTIVOSSALIDA(idmotivo)
 )
 GO
+
+
+
 

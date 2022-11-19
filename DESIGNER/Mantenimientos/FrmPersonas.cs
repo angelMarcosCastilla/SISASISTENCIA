@@ -208,7 +208,7 @@ namespace DESIGNER.Mantenimientos
         }
         private DialogResult preguntar(string textoPregunta)
         {
-            return MessageBox.Show(textoPregunta, "Sistema de cursos", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
+            return MessageBox.Show(textoPregunta, "Sistema de Asistencia", MessageBoxButtons.YesNo, MessageBoxIcon.Question, MessageBoxDefaultButton.Button2);
         }
     }
 }

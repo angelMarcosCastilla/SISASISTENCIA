@@ -14,7 +14,7 @@ namespace DESIGNER
 {
     public partial class Login : Form
     {
-         Usuario usuario = new Usuario();
+        Usuario usuario = new Usuario();
         bool mostrar = false;
         public Login()
         {
@@ -41,7 +41,8 @@ namespace DESIGNER
                     if (login)
                     {
                         string infoUser = resultado.Rows[0]["nombres"].ToString() + " " + resultado.Rows[0]["apellidos"].ToString();
-                        Dashboard dashboard = new Dashboard(infoUser);
+                        int idusuario = Convert.ToInt16(resultado.Rows[0]["idusuario"].ToString());
+                        Dashboard dashboard = new Dashboard(infoUser, idusuario);
                         dashboard.Show();
                         this.Hide();
                     }

@@ -61,11 +61,23 @@
     <Compile Include="Login.Designer.cs">
       <DependentUpon>Login.cs</DependentUpon>
     </Compile>
+    <Compile Include="Mantenimientos\frmAsistencia.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmAsistencia.Designer.cs">
+      <DependentUpon>frmAsistencia.cs</DependentUpon>
+    </Compile>
     <Compile Include="Mantenimientos\frmGrupos.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Mantenimientos\frmGrupos.designer.cs">
       <DependentUpon>frmGrupos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimientos\frmMatricula.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimientos\frmMatricula.Designer.cs">
+      <DependentUpon>frmMatricula.cs</DependentUpon>
     </Compile>
     <Compile Include="Mantenimientos\frmMotivossalida.cs">
       <SubType>Form</SubType>
@@ -93,8 +105,14 @@
     <EmbeddedResource Include="Login.resx">
       <DependentUpon>Login.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmAsistencia.resx">
+      <DependentUpon>frmAsistencia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmGrupos.resx">
       <DependentUpon>frmGrupos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimientos\frmMatricula.resx">
+      <DependentUpon>frmMatricula.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimientos\frmMotivossalida.resx">
       <DependentUpon>frmMotivossalida.cs</DependentUpon>
